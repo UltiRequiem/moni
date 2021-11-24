@@ -1,6 +1,8 @@
 [package]
 name = "moni"
 description = "Recursively deletes all the apparitions of a directory/file"
+authors = ["Eliaz Bobadilla <eliaz.bobadilladev@gmail.com>"]
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
 
