@@ -6,4 +6,4 @@ edition = "2021"
 [dependencies]
 clap = "3.0.0-beta.5"
 walkdir = "2"
-
+futures = "0.3.5"
