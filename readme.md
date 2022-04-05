@@ -1,10 +1,14 @@
 # moni 💖
 
+> [Monika](https://doki-doki-literature-club.fandom.com/wiki/Monika_(DDLC)) is a
+> character from Doki Doki Literature Club, The #1 Psychological Horror
+> Experience 💀
+
 <img align="right" src="https://user-images.githubusercontent.com/71897736/161859124-10ce7b63-7827-443d-baf9-a272a4c67058.png" height="150px">
 
 Asynchronously delete all the apparitions of a directory/file ❌
 
-### On giant shoulders 💪
+### Standing on the shoulders of giants
 
 - 🗼 [tokio-rs](https://github.com/tokio-rs/tokio): A runtime for writing
   reliable asynchronous applications with Rust.
@@ -17,7 +21,7 @@ Asynchronously delete all the apparitions of a directory/file ❌
 
 ## CLI
 
-### Install
+### Install 📦
 
 ```sh
 cargo install moni
@@ -26,7 +30,7 @@ cargo install moni
 Or use a binary from
 [releases](https://github.com/UltiRequiem/moni/releases/latest) 🤖
 
-### Usage
+### Usage 🏏
 
 ```sh
 moni
