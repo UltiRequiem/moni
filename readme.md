@@ -33,10 +33,10 @@ Or use a binary from
 ### Usage 🏏
 
 ```sh
-moni
+moni --files myNotCoolDirectory trash script.py
 ```
 
-This will delete a common list of unwanted directories.
+This will delete also a common list of unwanted directories.
 
 > [List](./src/lib.rs#L6)
 
