@@ -1,50 +1,40 @@
-use clap::App;
-use futures::executor::block_on;
-use std::{fs, io, path};
+use moni::{common_unwanted_directories,set_writable};
+use owo_colors::{colors::*, OwoColorize};
+use futures::future::join_all;
+use std::{io::Result, path::Path, time::Instant};
+use tokio::fs::{remove_dir_all, remove_file};
 use walkdir::WalkDir;
 
-fn to_delete() -> Vec<&'static str> {
-    vec![
-        "node_modules",
-        "__pycache__",
-        ".cache",
-        "dist",
-        "build",
-        "bowerComponents",
-    ]
-}
-
-async fn delete(entry: &path::Path) -> io::Result<()> {
+async fn delete(entry: &Path) -> Result<()> {
     if entry.is_file() {
-        fs::remove_file(entry)?;
+        remove_file(entry).await?;
     } else {
-        fs::remove_dir_all(entry)?;
+        remove_dir_all(entry).await?;
     }
 
-    println!("{}", entry.display());
+    println!("{}", entry.display().fg::<Black>().bg::<Yellow>());
 
     Ok(())
 }
 
-async fn async_main() -> io::Result<()> {
-    for dir in to_delete().iter() {
+#[tokio::main]
+async fn main() {
+    let start = Instant::now();
+
+    let dirs_to_del = common_unwanted_directories();
+
+    let mut futures = Vec::new();
+
+    for dir in dirs_to_del.iter() {
         for entry in WalkDir::new(dir).into_iter().filter_map(|e| e.ok()) {
-            delete(entry.path()).await?;
+            let path = entry.into_path();
+            set_writable(&path);
+            let future = async move { delete(&path).await };
+            futures.push(future);
         }
     }
 
-    Ok(())
-}
+    join_all(futures).await;
 
-fn main() -> io::Result<()> {
-    App::new("moni")
-        .bin_name("moni")
-        .version("v0.1.0")
-        .author("UltiRequiem <https://github.com/UltiRequiem>")
-        .about("Delete directories to free up disk space.")
-        .get_matches();
-
-    block_on(async_main())?;
-
-    Ok(())
+    println!("{}", format!("{}", start.elapsed().as_secs_f32()).green())
 }

@@ -1,40 +1,10 @@
 # moni
 
-![LOC](https://img.shields.io/tokei/lines/github.com/UltiRequiem/moni?color=blue&label=Total%20Lines)
+Asynchronously delete all the apparitions of a directory/file.
 
-Asynchronously and recursively delete all the apparitions of a directory/file.
+## CLI
 
-## Usage
-
-```sh
-moni
-```
-
-This will delete all the `["node_modules", "__pycache__", "dist", "build"]` and some more,
-check the full list [here](https://github.com/UltiRequiem/moni/blob/main/src/main.rs#L6),
-in your current folder and subfolders.
-
-Built in help:
-
-```sh
-$ moni --help
-moni v0.1.0
-
-UltiRequiem <https://github.com/UltiRequiem>
-
-Delete directories to free up disk space.
-
-USAGE:
-    moni
-
-OPTIONS:
-    -h, --help       Print help information
-    -V, --version    Print version information
-```
-
-## Installation
-
-With `cargo`:
+### Install
 
 ```sh
 cargo install moni
@@ -42,6 +12,48 @@ cargo install moni
 
 Or use a binary from [releases](https://github.com/UltiRequiem/moni/releases/latest).
 
-## License
+### Usage
 
-Licensed under the [MIT License](./license).
+```sh
+moni
+```
+
+This will delete a common list of unwanted directories.
+
+> [List](./src/lib.rs#L6)
+
+Built in help:
+
+```sh
+moni --help
+```
+
+## Support
+
+Open an Issue, I will check it a soon as possible 👀
+
+If you want to hurry me up a bit
+[send me a tweet](https://twitter.com/UltiRequiem) 😆
+
+Consider [supporting me on Patreon](https://patreon.com/UltiRequiem) if you
+like my work 🙏
+
+Don't forget to start the repo ⭐
+
+## Versioning
+
+We use [Semantic Versioning](http://semver.org). For the versions available, see
+the [tags](https://github.com/UltiRequiem/moni/tags) 🏷️
+
+## Authors
+
+[Eliaz Bobadilla](https://ultirequiem.com) - Creator and
+Maintainer 💪
+
+See also the full list of
+[contributors](https://github.com/UltiRequiem/moni/contributors)
+who participated in this project ✨
+
+## Licence
+
+Licensed under the MIT License 📄
