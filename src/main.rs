@@ -1,6 +1,6 @@
-use moni::{common_unwanted_directories,set_writable};
-use owo_colors::{colors::*, OwoColorize};
 use futures::future::join_all;
+use moni::{common_unwanted_directories, set_writable};
+use owo_colors::{colors::*, OwoColorize};
 use std::{io::Result, path::Path, time::Instant};
 use tokio::fs::{remove_dir_all, remove_file};
 use walkdir::WalkDir;
