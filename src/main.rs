@@ -1,22 +1,31 @@
-use clap::Command;
+use clap::Parser;
 use moni::{common_unwanted_directories, delete_dirs};
 use owo_colors::OwoColorize;
 use std::time::Instant;
 
+#[derive(Parser)]
+#[clap(author="Eliaz Bobadilla", version="1.0.0", about="Delete unwanted files.", long_about = None)]
+struct Args {
+    #[clap(short, long)]
+    files: Vec<String>,
+}
+
 #[tokio::main]
 async fn main() {
-    Command::new("moni")
-        .bin_name("moni")
-        .version("v0.1.0")
-        .author("UltiRequiem <https://github.com/UltiRequiem>")
-        .about("Delete directories to free up disk space.")
-        .get_matches();
+    // putting something so Rust can infer the type
+    let mut parsed_new_dirs = vec![".DS_Store"];
+
+    let args = Args::parse();
+
+    for var in &args.files {
+        parsed_new_dirs.push(var);
+    }
+
+    parsed_new_dirs.append(&mut common_unwanted_directories());
 
     let start = Instant::now();
 
-    let dirs_to_del = common_unwanted_directories();
-
-    delete_dirs(dirs_to_del).await;
+    delete_dirs(parsed_new_dirs).await;
 
     println!(
         "{}",
