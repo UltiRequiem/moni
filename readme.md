@@ -1,6 +1,19 @@
-# moni
+# moni 💖
 
-Asynchronously delete all the apparitions of a directory/file.
+<img align="right" src="https://user-images.githubusercontent.com/71897736/161859124-10ce7b63-7827-443d-baf9-a272a4c67058.png" height="150px">
+
+Asynchronously delete all the apparitions of a directory/file ❌
+
+### On giant shoulders 💪
+
+- 🗼 [tokio-rs](https://github.com/tokio-rs/tokio): A runtime for writing
+  reliable asynchronous applications with Rust.
+- 🤗 [owo-colors](https://github.com/jam1garner/owo-colors): The most owo way to
+  have colors on your term.
+- 🚶 [walkdir](https://github.com/BurntSushi/walkdir): The defacto option to walk
+  dirs on Rust.
+- 🔮 [futures-rs](https://github.com/rust-lang/futures-rs): The official crate to
+  work with futures!
 
 ## CLI
 
@@ -11,7 +24,7 @@ cargo install moni
 ```
 
 Or use a binary from
-[releases](https://github.com/UltiRequiem/moni/releases/latest).
+[releases](https://github.com/UltiRequiem/moni/releases/latest) 🤖
 
 ### Usage
 
