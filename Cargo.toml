@@ -2,8 +2,10 @@
 name = "moni"
 description = "Recursively deletes all the apparitions of a directory/file"
 authors = ["Eliaz Bobadilla <eliaz.bobadilladev@gmail.com>"]
+readme = "readme.md"
 license = "MIT"
-version = "0.2.0"
+homepage = "https://github.com/UltiRequiem/moni"
+version = "0.2.1"
 edition = "2021"
 
 [dependencies]
