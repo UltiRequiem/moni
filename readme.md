@@ -46,6 +46,16 @@ Built in help:
 moni --help
 ```
 
+### Config
+
+It also supports a config file 🆙
+
+```json
+{ "files": ["myNotCoolDirectory", "example"] }
+```
+
+> ~/.moni.json
+
 ## Support
 
 Open an Issue, I will check it a soon as possible 👀
