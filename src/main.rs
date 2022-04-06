@@ -7,7 +7,7 @@ use std::{path::Path, process::exit, time::Instant};
 use tokio::fs::read_to_string;
 
 #[derive(Parser)]
-#[clap(author="Eliaz Bobadilla", version="1.0.0", about="Delete unwanted files.", long_about = None)]
+#[clap(author="Eliaz Bobadilla", version="0.2.0", about="Delete unwanted files.", long_about = None)]
 struct Args {
     #[clap(short, long)]
     files: Vec<String>,
