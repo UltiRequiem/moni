@@ -20,6 +20,7 @@ pub fn common_unwanted_directories() -> Vec<String> {
     ]
 }
 
+#[allow(clippy::permissions_set_readonly_false)]
 pub fn set_writable(path: &Path) {
     let mut perms = metadata(path).unwrap().permissions();
 
@@ -49,7 +50,7 @@ pub async fn delete_dirs(dirs: Vec<String>) -> i64 {
         for entry in WalkDir::new(dir).into_iter().filter_map(|e| e.ok()) {
             let path = entry.into_path();
             set_writable(&path);
-            count = count + 1;
+            count += 1;
             let future = async move { delete(&path).await };
             futures.push(future);
         }
