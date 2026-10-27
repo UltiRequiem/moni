@@ -11,7 +11,7 @@ edition = "2021"
 [dependencies]
 clap = { version = "3.1.8", features = ["derive"] }
 walkdir = "2"
-owo-colors = "3"
+owo-colors = "4"
 home = "0.5.3"
 tokio = { version = "1.18.5", features = ["full"] }
 futures = "0.3"
